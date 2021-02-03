@@ -1,10 +1,12 @@
-import "tailwindcss/tailwind.css";
+import '../styles/globals.css'
 import Head from 'next/head'
+import { ThemeProvider } from 'next-themes'
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
-      <Head>
+    <ThemeProvider attribute="class">
+       <Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
@@ -32,6 +34,7 @@ export default function MyApp({ Component, pageProps }) {
         <meta name="theme-color" content="#317EFB" />
       </Head>
       <Component {...pageProps} />
+    </ThemeProvider>
     </>
   )
 }

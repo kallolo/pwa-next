@@ -5,10 +5,12 @@ export default function Layout(props) {
         <div>
             <Head>
                 <title>{props.title}</title>
-                <link rel="icon" href="https://parsinta.com/favicons/favicon-16x16.png?v=vMgGe8RqKr"/>
+                <link rel="icon" href="https://parsinta.com/favicons/favicon-16x16.png?v=vMgGe8RqKr" />
             </Head>
-            <Navbar/>
-            {props.children}
+            <Navbar />
+            <div className="mt-8">
+                {props.children}
+            </div>
         </div>
     )
 }
