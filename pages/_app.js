@@ -3,13 +3,16 @@ import Head from 'next/head'
 import { ThemeProvider } from 'next-themes'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { ReactQueryDevtools } from 'react-query/devtools'
+import { Hydrate } from 'react-query/hydration';
+
 const queryClient = new QueryClient();
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <ThemeProvider attribute="class">
+        <Hydrate state={pageProps.dehydratedState}>
+          <ThemeProvider attribute="class">
           <Head>
             <meta charSet="utf-8" />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -39,6 +42,7 @@ export default function MyApp({ Component, pageProps }) {
           </Head>
           <Component {...pageProps} />
         </ThemeProvider>
+        </Hydrate>
         <ReactQueryDevtools/>
       </QueryClientProvider>
 

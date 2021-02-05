@@ -5,7 +5,7 @@ export default function Layout(props) {
         <div>
             <Head>
                 <title>{props.title}</title>
-                <link rel="icon" href="https://parsinta.com/favicons/favicon-16x16.png?v=vMgGe8RqKr" />
+                <link rel="icon" href="/icons/favicon-32x32.png" />
             </Head>
             <Navbar />
             <div className="mt-8">
